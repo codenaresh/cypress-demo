@@ -1,15 +1,15 @@
 name: Sanity build
 on: push
+
 jobs:
   cypress-run:
     runs-on: ubuntu-24.04
+
     steps:
       - name: Checkout
         uses: actions/checkout@v5
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
+
+      - name: Cypress run - only specific test
         uses: cypress-io/github-action@v6
         with:
-         with:
-           command: npm run test_webtable
+          command: npm run test_webtable
